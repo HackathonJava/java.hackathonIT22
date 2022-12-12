@@ -6,10 +6,12 @@ import java.util.Scanner;
 public class Shifr {
     public static void main(String[] args) {
         try {
-            MessageDigest digester = MessageDigest.getInstance("SHA-512");
-            byte[] input = "Secret string".getBytes();
+//            MessageDigest digester = MessageDigest.getInstance("SHA-1");
+            MessageDigest digester = MessageDigest.getInstance("MD5");
+            byte[] input = "Java".getBytes();
             byte[] digest = digester.digest(input);
             String a = Arrays.toString(digest);
+            System.out.println(a);
             System.out.println("\nGo: ");
             Scanner scanner = new Scanner(System.in);
             String n = scanner.nextLine ();
