@@ -16,10 +16,10 @@ public class Admin extends Personal implements Avtorization{
     }
 
     public void setPrice() {
-        System.out.println("¬ведите максимальную стоимость товара дл€ игры: ");
+        System.out.println("¬ведите минимальную стоимость товара дл€ игры: ");
         double price = scanner.nextDouble();
         Personal.setMaxPrice(price);
-        System.out.println("ћаксимальна€ стоимость установлена! - " + price);
+        System.out.println("ћинимальна€ стоимость установлена! : " + price);
     }
 
     public void setInstruction() {

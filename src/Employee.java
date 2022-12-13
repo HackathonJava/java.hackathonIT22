@@ -28,6 +28,7 @@ public class Employee extends Personal implements Avtorization{
         String login = scanner.nextLine();
         System.out.print("Введите ваш пароль: ");
         String password = scanner.nextLine();
+
         for(Employee employee : empList) {
             if(employee.getLogin().equals(login) && employee.getPassword().equals(password)) {
                 currentUser = employee;
@@ -46,7 +47,7 @@ public class Employee extends Personal implements Avtorization{
         String password = scanner.nextLine();
         System.out.print("Подтвердите пароль: ");
         String passwordCheck = scanner.nextLine();
-        if(passwordCheck.equals(passwordCheck)) {
+        if(password.equals(passwordCheck)) {
             System.out.print("Пожалуйста заполните анкету!" +
                     "\nВаше имя:  ");
             String name = scanner.nextLine();
@@ -70,22 +71,30 @@ public class Employee extends Personal implements Avtorization{
 //            System.out.println("Вы дарите подарок: " + hashMap.get(currentUser.getName()));
 
         Random random = new Random();
-        for(Employee employee : empList) {
-            int count = random.nextInt(1, empList.size());
-            if(empList.get(count).isRecipient()) {
-                while (true) {
-                    count = random.nextInt(1, empList.size());
-                    if(!empList.get(count).isRecipient()) {
-                        hashMap.put(employee.getName(), empList.get(count).getName());
-                        empList.get(count).setRecipient(true);
-                        break;
-                    }
+        for (int i = 0; i < empList.size(); i++) {
+            ArrayList<Integer> list = new ArrayList<>();
+            int count = random.nextInt();
+            list.add(count);
+            for(Integer integ : list) {
+                if(integ == i) {
+
                 }
             }
-            else if(!empList.get(count).isRecipient()) {
-                hashMap.put(employee.getName(), empList.get(count).getName());
-                empList.get(count).setRecipient(true);
-            }
+//            int count = random.nextInt(empList.size());
+//            if(empList.get(count).isRecipient()) {
+//                while (true) {
+//                    count = random.nextInt(empList.size());
+//                    if(!empList.get(count).isRecipient()) {
+//                        hashMap.put(employee.getName(), empList.get(count).getName());
+//                        empList.get(count).setRecipient(true);
+//                        break;
+//                    }
+//                }
+//            }
+//            if(!empList.get(count).isRecipient()) {
+//                hashMap.put(employee.getName(), empList.get(count).getName());
+//                empList.get(count).setRecipient(true);
+//            }
         }
     }
 

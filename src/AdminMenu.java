@@ -11,7 +11,7 @@ public class AdminMenu {
             while (true) {
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("\nМеню для админов: " +
-                        "\n1) Указать максимальную стоимость товара" +
+                        "\n1) Указать минимальную стоимость товара" +
                         "\n2) Работа с инструкциями" +
                         "\n3) Установить дату окончания игры" +
                         "\n4) Установить время обмена подарками" +
@@ -31,7 +31,7 @@ public class AdminMenu {
                                 "Введите номер меню: ");
                         int num = scanner.nextInt();
                         if(num == 1) admin.setInstruction();
-                            else if(num == 2) admin.addInstruction();
+             ч                else if(num == 2) admin.addInstruction();
                         break;
                     case 3:
                         admin.setExpirationDate();
