@@ -1,44 +1,48 @@
 import java.security.NoSuchAlgorithmException;
+import java.util.EmptyStackException;
 import java.util.Scanner;
 
-public class EmployeeMenu {
+public class UserMenu {
     public static void start() throws NoSuchAlgorithmException {
-        Employee employee = new Employee();
+        Admin admin = new Admin();
+        User user = new User();
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("\nМеню сотрудников: " +
                     "\n1) Зарегистрироваться" +
                     "\n2) Войти" +
-                    "\n3) Поддержка" +
+                    "\n3) Восстановление пароля" +
+                    "\n4) Просмотр инструкции" +
                     "\n0) Вернуться в главное меню");
 
             System.out.print("\nВведите номер меню: ");
             int number = scanner.nextInt();
             switch (number) {
                 case 1:
-                    employee.signup();
-                    SantaMenu.start();
+                    boolean result = user.signup();
+                    if (result) SantaMenu.start();
+                    else UserMenu.start();
                     break;
                 case 2:
-                    boolean res = employee.signin();
-                    if(res)
+                    boolean res = user.signin();
+                    if (res)
                         SantaMenu.start();
                     else System.out.println("\nНеверный логин или пароль, повторите попытку или создайте аккаунт!");
                     break;
                 case 3:
-                    System.out.println("Введите текст для отправки в поддержку:");
-                    String text = scanner.nextLine();
+                    Admin.recoveryPassword();
                     break;
-                case 0: MainMenu.start();
+                case 4:
+                    admin.setInstruction();
+                    break;
+                case 0:
+                    MainMenu.start();
+                    return;
                 default:
                     System.out.println("Выберите номер с меню!");
+                    UserMenu.start();
                     break;
             }
-//                "\n4) Добавление сотрудника в компанию" +
-//                "\n5) Удаление сотрудника из компании" +
-//                "\n6) Поменять руководителя компании" +
-//                "\n7) Меню для работы с сотрудниками" +
-//                "\n0) Вернуться в меню для работы с холдингом");
         }
     }
 }

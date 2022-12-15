@@ -1,15 +1,11 @@
 import java.util.ArrayList;
 
 public abstract class Personal {
-    public Personal() {
-    }
+    public Personal() {}
 
-    private static double maxPrice;
+    private static double minPrice;
     private static ArrayList<String> instruction = new ArrayList<>();
-    private static String expirationDate;
-    private static String dateChange;
-    private boolean isSanta = false;
-    private boolean isRecipient = false;
+    private static ArrayList<String> categories = new ArrayList<>();
     private String login;
 
     private String password;
@@ -17,8 +13,12 @@ public abstract class Personal {
 
     private int age;
     private String jobs;
-    private String category;
-    private String giftRecipients;
+    private String category = "сюрприз";
+
+    public Personal(String name) {
+        this.name = name;
+    }
+
     public Personal(String login, String password) {
         this.login = login;
         this.password = password;
@@ -32,12 +32,12 @@ public abstract class Personal {
         this.jobs = jobs;
     }
 
-    public static double getMaxPrice() {
-        return maxPrice;
+    public static double getMinPrice() {
+        return minPrice;
     }
 
-    public static void setMaxPrice(double maxPrice) {
-        Personal.maxPrice = maxPrice;
+    public static void setMinPrice(double minPrice) {
+        Personal.minPrice = minPrice;
     }
 
     public static ArrayList<String> getInstruction() {
@@ -48,21 +48,6 @@ public abstract class Personal {
         Personal.instruction = instruction;
     }
 
-    public static String getExpirationDate() {
-        return expirationDate;
-    }
-
-    public static void setExpirationDate(String expirationDate) {
-        Personal.expirationDate = expirationDate;
-    }
-
-    public boolean isSanta() {
-        return isSanta;
-    }
-
-    public void setSanta(boolean santa) {
-        isSanta = santa;
-    }
 
     public String getLogin() {
         return login;
@@ -104,35 +89,21 @@ public abstract class Personal {
         this.category = category;
     }
 
-    public String getGiftRecipients() {
-        return giftRecipients;
-    }
-
-    public void setGiftRecipients(String giftRecipients) {
-        this.giftRecipients = giftRecipients;
-    }
-
-    public static String getDateChange() {
-        return dateChange;
-    }
-
     public void setAge(int age) {
         this.age = age;
     }
 
-    public static void setDateChange(String dateChange) {
-        Personal.dateChange = dateChange;
-    }
-
-    public boolean isRecipient() {
-        return isRecipient;
-    }
-
-    public void setRecipient(boolean recipient) {
-        isRecipient = recipient;
-    }
 
     public int getAge() {
         return age;
     }
+
+    public static ArrayList<String> getCategories() {
+        return categories;
+    }
+
+    public static void setCategories(ArrayList<String> categories) {
+        Personal.categories = categories;
+    }
+
 }
