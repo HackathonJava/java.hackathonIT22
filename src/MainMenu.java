@@ -5,9 +5,11 @@ public class MainMenu {
     public static void start() throws NoSuchAlgorithmException {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("\n  Welcome to Secrets Santa!" +
+        System.out.println("-------------------------" +
+                "\n  Welcome to Secrets Santa!" +
                 "\nНовогодняя игра \"Тайный Санта\"" +
                 "\nПорадуй себя и друзей!\n" +
+                "-------------------------" +
                 "\nКем вы являетесь?" +
                 "\n1) Админ" +
                 "\n2) Сотрудник" +

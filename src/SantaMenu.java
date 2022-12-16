@@ -7,7 +7,9 @@ public class SantaMenu {
         User user = null;
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("\nМеню для санты: " +
+            System.out.println("-------------------------" +
+                    "\nМеню для санты: " +
+                    "\n-------------------------" +
                     "\n1) Выбор категории" +
                     "\n2) Узнать результаты жеребьевки" +
                     "\n3) Мои данные" +

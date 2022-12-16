@@ -3,7 +3,6 @@ import java.time.LocalDateTime;
 
 public class Main {
     public static void main(String[] args) throws NoSuchAlgorithmException {
-
         LocalDateTime localDateTime = LocalDateTime.now();
         User user1 = new User("ruslan","java","Руслан",19,"Student", localDateTime);
         User user2 = new User("arsen","java","Арсен",17,"Student", localDateTime);

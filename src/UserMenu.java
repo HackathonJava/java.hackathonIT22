@@ -1,5 +1,4 @@
 import java.security.NoSuchAlgorithmException;
-import java.util.EmptyStackException;
 import java.util.Scanner;
 
 public class UserMenu {
@@ -8,7 +7,9 @@ public class UserMenu {
         User user = new User();
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("\nМеню сотрудников: " +
+            System.out.println("-------------------------" +
+                    "\nМеню сотрудников: " +
+                    "\n-------------------------" +
                     "\n1) Зарегистрироваться" +
                     "\n2) Войти" +
                     "\n3) Восстановление пароля" +

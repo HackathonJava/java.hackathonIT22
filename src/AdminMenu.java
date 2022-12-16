@@ -10,7 +10,9 @@ public class AdminMenu {
             System.out.println("\nУспешный вход в систему!");
             while (true) {
                 Scanner scanner = new Scanner(System.in);
-                System.out.println("\nМеню для админов: " +
+                System.out.println("-------------------------" +
+                        "\nМеню для админов: " +
+                        "\n-------------------------" +
                         "\n1) Указать минимальную стоимость товара" +
                         "\n2) Работа с инструкциями" +
                         "\n3) Работа с категориями" +
