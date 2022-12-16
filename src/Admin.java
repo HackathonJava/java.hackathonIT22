@@ -102,52 +102,6 @@ public class Admin extends Personal implements Avtorization {
 
     // рандомайзер
     public static void randomGiver() {
-//        Random random = new Random();
-//        int size = empList.size();
-//        int rand = random.nextInt(1, size + 1);
-//        if (empList.get(rand).getName() != currentUser.getName() && empList.get(rand).isSanta()) {
-//            hashMap.put(currentUser.getName(), empList.get(rand).getName());
-//            System.out.println("Вы дарите подарок: " + hashMap.get(currentUser.getName()));
-//
-//            Random random = new Random();
-//            int count = random.nextInt(1, Employee.getEmpList().size());
-//            for (int i = 0; i < Employee.getEmpList().size(); i++) {
-//                if (!Employee.getEmpList().get(count).isRecipient() &&
-//                        !Employee.getEmpList().get(i).getName().equals(Employee.getEmpList().get(count).getName())) {
-//                    hashMap.put(Employee.getEmpList().get(i).getName(), Employee.getEmpList().get(count).getName());
-//                    Employee.getEmpList().get(count).setRecipient(true);
-//                } else {
-//                    while (true) {
-//                        count = random.nextInt(1, Employee.getEmpList().size());
-//                        if (!Employee.getEmpList().get(count).isRecipient() &&
-//                                !Employee.getEmpList().get(i).getName().equals(Employee.getEmpList().get(count).getName())) {
-//                            hashMap.put(Employee.getEmpList().get(i).getName(), Employee.getEmpList().get(count).getName());
-//                            Employee.getEmpList().get(count).setRecipient(true);
-//                            break;
-//                        }
-//                    }
-//                }
-//            }
-//            System.out.println("Жеребьевка успешно завершена!" +
-//                    "\nРезультаты жеребьевки: \n");
-//            for (Map.Entry<String, String> map : hashMap.entrySet()) {
-//                System.out.println(map.getKey() + " " + map.getValue());
-//            }
-//            System.out.println(hashMap);
-//
-//            for (Employee employee : Employee.getEmpList()) {
-//                System.out.println(employee.getName());
-//            }
-//
-//            Collections.shuffle(Employee.getEmpList());
-//            System.out.println();
-//
-//            for (Employee employee : Employee.getEmpList()) {
-//                System.out.println(employee.getName());
-//            }
-//
-//        }
-//    }}
         if (Storage.getEmpList().size() < 3) {
             System.out.println("Для старта жеребьевки требуется минимум 3 человека!");
             return;
@@ -167,19 +121,6 @@ public class Admin extends Personal implements Avtorization {
         }
     }
 
-    // инфо участников
-    public static void infoEmployee() {
-        System.out.println("Количество участников: " + Storage.getEmpList().size() + "\n");
-        for(User user : Storage.getEmpList()) {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-            String formatDateTime = user.getLocalDateTime().format(formatter);
-            System.out.println("Дата регистрации: " + formatDateTime +
-                    "\nЛогин: " + user.getLogin() +
-                    "\nИмя: " + user.getName() +
-                    "\nВозраст: " + user.getAge() +
-                    "\nДолжность: " + user.getJobs() + "\n");
-        }
-    }
 
     // восстановление пароля
     public static void recoveryPassword() {

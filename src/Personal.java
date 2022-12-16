@@ -7,7 +7,6 @@ public abstract class Personal {
     private static ArrayList<String> instruction = new ArrayList<>();
     private static ArrayList<String> categories = new ArrayList<>();
     private String login;
-
     private String password;
     private String name;
 

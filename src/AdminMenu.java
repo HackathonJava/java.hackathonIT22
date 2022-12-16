@@ -73,7 +73,7 @@ public class AdminMenu {
                         Admin.randomGiver();
                         break;
                     case 6:
-                        Admin.infoEmployee();
+                        Storage.infoEmployee();
                         break;
                     case 0:
                         MainMenu.start();

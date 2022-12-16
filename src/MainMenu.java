@@ -26,7 +26,7 @@ public class MainMenu {
                 String num = scanner.next();
                 if (num.equals("y")) {
                     System.out.println("Вы вышли с программы!");
-                    break;
+                    return;
                 }
                 MainMenu.start();
             }
